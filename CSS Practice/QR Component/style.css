@@ -1,0 +1,48 @@
+/*
+- White: hsl(0, 0%, 100%)
+- Light gray: hsl(212, 45%, 89%)
+- Grayish blue: hsl(220, 15%, 55%)
+- Dark blue: hsl(218, 44%, 22%)
+- Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+- Weights: 400, 700
+*/
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #d6e2f0;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: hsl(0, 0%, 100%);
+    text-align: center;
+    max-width: 20%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.card h2 {
+    color: hsl(218, 44%, 22%);
+    margin: 1.65rem;
+    font-size: 1vw;
+}
+
+.card p {
+    color: hsl(220, 15%, 55%);
+    width: 80%;
+    margin: 1.5rem auto;
+    font-size: 1vw;
+}
