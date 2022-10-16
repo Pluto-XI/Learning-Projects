@@ -53,3 +53,20 @@ Note: The server can only send back one request, any time something is sent back
 
 /////////////////////////////
 
+## HTML AND DYNAMIC TEMPLATING
+Templating allows us to define a preset 'pattern' for a webpage, that we can dynamically modify.
+For example, we could define a single "Search" template that displays all the results for a given term. We don't know what the term is,
+or how many results there are ahead of time. The page is created on the fly.
+
+You can use a <b>templating engine</b> such as EJS, PUG, handlebars, etc.
+
+Use app.set to change view engine to your templating engine. app.set('view engine', 'ejs')
+You can place templates within a "views" directory. Express automatically assumes that this is the location so you don't need to specify path.
+NOTE//
+The default views directory will only work if you are running the app from within the same directory where the index.js is.
+If you want to change this, you need to change the default directory.
+By default the directory is process.cwd()/views
+
+const path = require('path')
+app.set("views", path.join(__dirname, '/views'))
+//

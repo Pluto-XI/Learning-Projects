@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 
 //Start listening for requests
 app.listen(8080, () => {
@@ -20,6 +21,13 @@ app.listen(8080, () => {
 //app.get expects a path and a callback function that runs whenever a request comes in matching the path. * can be used for all get requests
 //Request contains a parameter property that can be used for dynamic pages. Can be destructured using path name
 
+
+
+//You can set settings within Express, this is setting the template engine to EJS and the views path
+app.set('view engine', 'ejs')
+app.set("views", path.join(__dirname, '/views'))
+
+
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params
     console.log(req.params)
@@ -36,9 +44,11 @@ app.get('/r/:subreddit/:postID', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.send("This is the home page!")
+    res.render('home')
 })
 
+
+//req.query provides access to URL parameters
 app.get('/search', (req, res) => {
     const { q } = req.query;
     res.send(`Your question was ${q}`)
